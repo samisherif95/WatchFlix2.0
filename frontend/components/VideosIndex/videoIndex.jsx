@@ -60,7 +60,7 @@ class VideoIndex extends React.Component{
         return (
             <div className='videoIndex'>
                 <div className='mainVideoDisplay'>
-                    <video poster={videos[0].photo_url} onMouseOver={this.playMainVideo} id='vids' muted><source src={videos[0].video_url} type="video/mp4"/></video>       
+                    <video poster={videos[0].photo_url} onMouseOver={this.playMainVideo} id='vids' muted><source src={videos[0].video_url} type="video/mp4" autoPlay/></video>       
                     <div className='carouselRow'>
                         {
                             videos.slice(0,9).map(video => (

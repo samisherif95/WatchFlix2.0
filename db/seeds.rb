@@ -22,6 +22,7 @@ romance = Genre.create!({genre: 'Romance'})
 
 inception =  Video.create!({title: 'Inception', description:'trippy subconscious movie', year: 2014 ,video_type:'Movie' ,rating:'7/10'})
 test = open('https://watchflix-seeds.s3-us-west-1.amazonaws.com/test.mp4')
+
 inception.video_url.attach(io: test, filename: 'test.mp4', content_type: 'video')
 inception.photo.attach(io: open('https://watchflix-seeds.s3-us-west-1.amazonaws.com/inception.jpg'), filename: 'inception.jpg')
 
