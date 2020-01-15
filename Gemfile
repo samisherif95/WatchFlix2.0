@@ -35,7 +35,6 @@ gem 'aws-sdk-s3', require: false
 gem 'annotate'
 gem 'jquery-rails'
 gem 'pry-rails'
-gem 'rails_12factor'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
@@ -64,5 +63,9 @@ group :test do
   gem 'chromedriver-helper'
 end
 
+group :production do
+  # gem 'pg'
+  gem 'rails_12factor'
+end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
