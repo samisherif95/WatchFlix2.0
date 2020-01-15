@@ -1,0 +1,503 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ html, body, div, span, object, a,iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin: 0; 
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    border-color: white;
+    color: white;
+}
+
+#root {
+   height: 100vh; 
+   overflow-x: hidden; 
+   /* background: #141414; */
+}
+
+ .homePage{
+   font-family: "Arial", sans-serif;
+   height:100vh;
+}
+ .homePage-browse{
+   font-family: "Arial", sans-serif;
+   height:100vh;
+   background: #141414; 
+}
+
+.login{
+   background-color: #e50914;
+   display: inline-block;
+   line-height: normal;
+   padding: 7px 17px;
+   text-align: center;
+   font-weight: 400;
+   font-size: 1rem;
+   color: #ffffff;
+   border-radius: 3px;
+   text-decoration: none;
+   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.45);
+   overflow: visible;
+}
+.btn-sml{
+   height: 15%;
+   margin-top:21px;
+   margin-right: 30px;
+   border: none;
+}
+
+.btn-log{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border: none;
+   font-size: 16px;
+   font-weight: bold;
+   margin: 24px 0 12px;
+
+}
+
+.btn-xl {
+   font-size: 2rem;
+   padding: 1.5rem 2.1rem;
+   text-transform: uppercase;
+   display: block;
+   vertical-align: middle;
+   margin: auto;
+   width: 30%;
+}
+
+.header{
+   display: flex;
+   justify-content: space-between;  
+}
+
+ .signup{
+   background-color: #e50914;
+   line-height: normal;
+   padding: 7px 17px;
+   font-weight: 400;
+   font-size: 1rem;
+   color: #ffffff;
+   border-radius: 3px;
+   text-decoration: none;
+   
+ }
+
+.showcase-content {
+  position: relative;
+  z-index: 2;
+  width: 65%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 9rem;
+}
+
+.showcase-content h1 {
+   color: white;
+   font-weight: 700;
+   font-size: 3rem;
+   line-height: 1.1;
+   margin: 0 0 2rem;
+}
+
+.showcase-content h2 {
+   color: white;
+   font-weight: 700;
+   font-size: 5.2rem;
+   line-height: 1.1;
+   margin: 0 0 2rem;
+}
+
+.showcase-content p {
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 400;
+  font-size: 1.9rem;
+  line-height: 1.25;
+  margin: 0 0 2rem;
+}
+
+.watchFlixBackground{
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   background-size: auto 100%;
+   z-index: -1;
+   filter: brightness(45%);
+   height: 100%;
+   width: 100%;
+} 
+
+.watchFlixlogo{
+   float: left;
+   height: 48px;
+   width: 177px;
+   padding-left: 30px;
+   padding-top: 21px;
+}
+
+p{
+   color: white
+}
+
+/* ----------------------------------------------- */
+/* -----------------SessionFrom------------------- */
+/* ----------------------------------------------- */
+
+
+.main-session-form{
+  width: 100%;
+  height: 660px;
+}
+
+.session-form{
+   display: block;
+   width: 314px;
+   height: 560px;
+   margin: 0 auto;
+   border-radius: 5px;
+   background: #000;
+   background: rgba(0,0,0,0.75);
+   padding: 60px 68px 40px;
+}
+
+.session-form-input{
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: column;
+}
+.session-form h1{
+   font-size: 32px;
+   color: white;
+   margin-bottom: 13px;
+}
+
+.session-form-input-fields{
+   box-sizing: border-box;
+   width: 314px;
+   height: 48px;
+   padding: 20px;
+   padding-top: 28px;
+   background-color: #333333;
+   border: none;
+   border-radius: 4px;
+   color: white;
+   font-size: 16px;
+   vertical-align: middle;
+}
+
+.session-form-input button{
+   margin-top: 40px;
+   background-color: #E51314;
+   color: white;
+   width: 314px;
+   padding: 14px 18px;
+   font-size: 17px;
+   font-weight: bold;
+   border-radius: 4px;
+   border:none;
+}
+
+.addOns{
+   color: #737373;
+   position: absolute;
+   top: 700px;
+   text-decoration: none;
+}
+
+.remember{
+   padding-top: 5px;
+   color: #b3b3b3;
+   font-size: 13px;
+}
+
+.form-errors{
+   /* padding-top: 10px; */
+   background: #E87c03;
+   color: white;
+   border-radius: 4px;
+   font-size: 14px;
+   list-style-type: none;
+   font-family: Arial, Helvetica, sans-serif;
+   margin-bottom: 20px;
+   width: 314px;
+   height: 48px;
+   text-align: center;
+
+}
+/* ----------------------------------------------- */
+/* -----------------NavBar------------------- */
+/* ----------------------------------------------- */
+
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.navbar-container{
+   height: 68px;
+   display: flex;
+   flex-direction: row; 
+   justify-content: space-between;
+   padding-right: 20px;
+   z-index: 2;
+   background-color: rgb(20, 20, 20); 
+}
+
+.navTrans{
+   transition: background-color 1s ease;
+   background-color:transparent;
+}
+
+.navbar-leftSide{
+   display: flex; 
+   align-items: center; 
+}
+
+.navbar-leftSide ul {
+   display: flex; 
+   flex-direction: row; 
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+.navNav{
+   color: white; 
+   cursor: pointer;
+   padding: 0px 15px;
+   list-style: none;
+   text-decoration: none;   
+}
+
+.navNav:hover{
+  color: #737373;
+}
+
+.navbar-rightSide{
+   display: flex; 
+   flex-direction: row; 
+   justify-content: flex-start; 
+   align-items: center; 
+}
+
+.navbar-rightSide li {
+   padding-left: 14px;
+   padding-right: 15px;
+   box-sizing: border-box; 
+   cursor: pointer;
+   list-style: none;
+}
+
+/* .navbar-rightSide li i{
+   color: white
+} */
+
+.watchFlixlogo-nav{
+   float: left;
+   height: 48px;
+   width: 177px;
+}
+
+.fas{
+   color: white;
+}
+
+.dropdown-toggle{   
+   position: absolute;
+   top: 68px;
+   right: 0px;
+   font-size: 14px;
+   min-width: 142px;
+   white-space: nowrap;
+   box-shadow: 0 6px 12px rgba(0,0,0,.175);
+   border-bottom-left-radius: 5px;
+   border-bottom-right-radius: 5px;
+   background-color: rgb(0, 0, 0, 0.8);
+   padding: 15px; 
+   z-index: 3; 
+}
+
+.dropdown-toggle li{
+   padding: 10px;
+   color:white;
+   width: 100%;
+   height: 100%;
+}
+
+.hidden { 
+   display: none;
+}
+
+
+.hidden strong{ 
+   display: none;
+}
+
+.hidden i{ 
+   display: none;
+}
+
+.navbar-icons {
+   text-decoration: none;
+   color: white ;
+}
+
+/* ----------------------------------------------- */
+/* -----------------VideosIndex------------------- */
+/* ----------------------------------------------- */
+
+.videoIndex{
+   display: flex;
+   flex-direction: column;
+   padding-top:68px;
+   background:blue;
+}
+
+.mainVideoDisplay{
+   height:1045px;
+   background-image: linear-gradient(to bottom, rgba(20, 20, 20, 0) 0%, rgba(20, 20, 20, 0.15) 15%, rgba(20, 20, 20, 0.35) 29%, rgba(20, 20, 20, 0.58) 44%, #141414 68%, #141414 100%);
+   display: flex; 
+   align-items: flex-end;
+   position: relative;
+   /* width: 100vh;  */
+}
+
+.mainVideoDisplay video{
+   position:absolute;
+   top: 0;
+   left: 0;
+   width:100%;
+   height: 100%;
+   object-fit:fill;
+}
+
+.mainVideoDisplay .carouselRow{
+   padding-bottom: 50px;
+}
+
+.restOfVidIndex{
+   background: #141414;
+}
+
+.carouselRow{
+   display: flex;
+   height: 280px;
+   width: 100%;
+   bottom: 0;
+   z-index: 1;
+   scrollbar-width: none;
+   transition: transform 450ms;
+   overflow: -moz-hidden-unscrollable;
+   overflow-x: scroll;
+   overflow-y: hidden;
+   width: 95vw;
+   margin: 0 auto;
+}
+
+.carousel{
+   position: relative;
+   background: yellow;
+   display: inline-block;
+   height: 65%;
+   transform: translateY(60px);
+   flex: 0 0 20.0%;
+   margin: 0 2px;
+   transition: all .2s ease-in-out;
+   /* overflow: hidden; */
+   border: 1px solid black;
+}
+
+.carousel video{
+   height: 100%;
+   width: 100%;
+   object-fit: cover;
+}
+
+.carousel strong{
+   z-index: 1;
+   font-weight: bolder;
+   position: absolute;
+   left: 12px;
+   bottom: 32px;
+   color: white;
+   font-family: Arial, Helvetica, sans-serif;
+   text-shadow: 0.5px 0.5px black;
+}
+
+.carousel i{
+   z-index: 1;
+   font-weight: bolder;
+   position: absolute;
+   left: 12px;
+   bottom: 60px;
+   color: white;
+   text-shadow: 0.5px 0.5px black;
+}
+
+
+.carousel:hover {
+   
+   transform: scale(1.5);
+   z-index: 1;
+   width: 80%;
+   height: 80%;
+}
+
+.genreName{
+   color: white;
+   font-size: 22px;
+   font-family: Arial, Helvetica, sans-serif;
+   position: relative;
+   top: 35px;
+   height: fit-content;
+   left: 60px
+}
+
+#lastCar{
+   padding-bottom: 25px;
+}
+
+
+/* ----------------------------------------------- */
+/* -----------------VideosPlayer------------------- */
+/* ----------------------------------------------- */
+
+.fullScreenPlayer{
+   background-color: black;
+   position: fixed;
+   width: 100%;
+   height: 100%;
+}
+.watchVideoParent{
+   display: flex;
+   justify-content: center;
+}
+.watchVideo{
+   height: 100%;
+   width: 100%;
+   position: fixed;
+   display: flex;
+   justify-content: center;
+}
