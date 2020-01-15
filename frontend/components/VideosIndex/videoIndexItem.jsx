@@ -17,7 +17,7 @@ class VideoIndexItem extends React.Component{
     }
 
     onHoverPlay(e) {
-        let video = e.currentTarget.children[0];
+        let video = e.currentTarget.children[2];
         e.persist();
         video.play().then(null, () => {
             video.play();
@@ -25,12 +25,13 @@ class VideoIndexItem extends React.Component{
     }
     onToggle(e){
         this.toggleHidden(e);
+        // debugger
         this.onHoverPlay(e);
     }
 
     onLeaveStop(e) {
         e.currentTarget.classList.add('hidden')
-        let video = e.currentTarget.children[0];
+        let video = e.currentTarget.children[2];
         video.pause();
         video.currentTime = 0;
         video.load();
