@@ -9,7 +9,7 @@ const mapStateToProps = (state) => ({
     currentUser: state.entities.users[state.session.id],
     videos: Object.values(state.entities.videos),
     genres: Object.values(state.entities.genres),
-    // mylists: Object.values(state.entities.mylists)
+    mylist: Object.values(state.entities.mylist)
 })
 
 const mapDispatchToProps = dispatch => ({

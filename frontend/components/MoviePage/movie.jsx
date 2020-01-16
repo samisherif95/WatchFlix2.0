@@ -4,10 +4,12 @@ import VideoIndexItem from '../VideosIndex/videoIndexItem'
 class MoviePage extends React.Component {
     constructor(props) {
         super(props);
-        this.playMainVideo = this.playMainVideo.bind(this)
         this.state = {
             mainVideo: 0
         }
+        this.playMainVideo = this.playMainVideo.bind(this)
+        this.toggleMute = this.toggleMute.bind(this);
+
     }
 
     componentDidMount() {
@@ -26,6 +28,17 @@ class MoviePage extends React.Component {
         return result;
     }
 
+    toggleMute() {
+        let vid = document.getElementById('vids')
+        if (vid.muted === false) {
+            vid.muted = true;
+            console.log('mute on')
+        } else {
+            vid.muted = false;
+            console.log('mute off')
+        }
+    }
+
     playMainVideo() {
         let newMainVideo = this.state.mainVideo + 1
         this.setState({
@@ -40,15 +53,6 @@ class MoviePage extends React.Component {
         }
     }
 
-    // playMiniVideos(){
-    //     let video = document.getElementById('MiniVids');
-    //     video.play();
-    //     video.addEventListener('ended', function () {
-    //         video.load();
-    //     });
-    // }
-
-
     render() {
         if (this.props.videos.length === 0 || this.props.genres.length === 0) {
             return null;
@@ -60,11 +64,11 @@ class MoviePage extends React.Component {
             video.video_type === 'Movie'
         ))
 
-        console.log(MovieVids);
         return (
             <div className='videoIndex'>
                 <div className='mainVideoDisplay'>
-                    <video poster={MovieVids[19].photo_url} onMouseOver={this.playMainVideo} id='vids' muted><source src={videos[0].video_url} type="video/mp4" /></video>
+                    <i className="fas fa-volume-mute fa-3x" onClick={this.toggleMute}></i>
+                    <video poster={MovieVids[19].photo_url} onMouseOver={this.playMainVideo} id='vids' muted><source src={MovieVids[19].video_url} type="video/mp4" /></video>
                     <div className='carouselRow'>
                         {
                             MovieVids.slice(0, 5).map(video => (

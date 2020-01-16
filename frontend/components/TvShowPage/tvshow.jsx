@@ -8,6 +8,7 @@ class TvShowPage extends React.Component {
         this.state = {
             mainVideo: 0
         }
+        this.toggleMute = this.toggleMute.bind(this)
     }
 
     componentDidMount() {
@@ -40,13 +41,16 @@ class TvShowPage extends React.Component {
         }
     }
 
-    // playMiniVideos(){
-    //     let video = document.getElementById('MiniVids');
-    //     video.play();
-    //     video.addEventListener('ended', function () {
-    //         video.load();
-    //     });
-    // }
+    toggleMute() {
+        let vid = document.getElementById('vids')
+        if (vid.muted === false) {
+            vid.muted = true;
+            console.log('mute on')
+        } else {
+            vid.muted = false;
+            console.log('mute off')
+        }
+    }
 
 
     render() {
@@ -60,11 +64,11 @@ class TvShowPage extends React.Component {
             video.video_type === 'TvShow'
         ))
 
-        console.log(this.props.videos[0].video_url);
         return (
             <div className='videoIndex'>
                 <div className='mainVideoDisplay'>
-                    <video poster={tvshowVids[0].photo_url} onMouseOver={this.playMainVideo} id='vids' muted><source src={videos[0].video_url} type="video/mp4" /></video>
+                    <i className="fas fa-volume-mute fa-3x" onClick={this.toggleMute}></i>
+                    <video poster={tvshowVids[0].photo_url} onMouseOver={this.playMainVideo} id='vids' muted><source src={tvshowVids[0].video_url} type="video/mp4" /></video>
                     <div className='carouselRow'>
                         {
                             tvshowVids.slice(0, 5).map(video => (

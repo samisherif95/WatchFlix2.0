@@ -11,7 +11,6 @@ class HomePage extends React.Component{
     }
 
     render(){
-        console.log(this.props.currentUser); 
         if (this.props.currentUser) {
             return (
                  

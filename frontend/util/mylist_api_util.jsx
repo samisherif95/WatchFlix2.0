@@ -6,7 +6,7 @@ export const getMyLists =() => (
     })
 )
 
-export const createList = (videoId) => (
+export const addList = (videoId) => (
     $.ajax({
         url: '/api/mylists',
         method: 'post',

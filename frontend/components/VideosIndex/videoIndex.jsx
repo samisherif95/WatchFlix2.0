@@ -3,17 +3,22 @@ import VideoIndexItem from './videoIndexItem'
 
 class VideoIndex extends React.Component{
     constructor(props){
-        super(props);
-        this.playMainVideo = this.playMainVideo.bind(this)
+        super(props)
         this.state ={
-            mainVideo: 0
+            mainVideo: 0,
         }
+        this.playMainVideo = this.playMainVideo.bind(this);
+        this.toggleMute = this.toggleMute.bind(this);
     }
+
 
     componentDidMount(){
         this.props.requestGenres()
         this.props.requestVideos()
+        this.props.requestLists()
     }
+
+    
 
     getvideosforGenre(id){
         let videos = this.props.videos;
@@ -41,30 +46,32 @@ class VideoIndex extends React.Component{
         }
     }
 
-    // playMiniVideos(){
-    //     let video = document.getElementById('MiniVids');
-    //     video.play();
-    //     video.addEventListener('ended', function () {
-    //         video.load();
-    //     });
-    // }
+    toggleMute(){
+        let vid = document.getElementById('vids')
+        if(vid.muted === false){
+            vid.muted = true;
+            console.log('mute on')
+        }else{
+            vid.muted = false;
+            console.log('mute off')
+        }
+    }
 
 
     render(){
         if(this.props.videos.length === 0 || this.props.genres.length===0){
             return null;
         }
-        console.log(this.props);
-        const {videos,genres,history} = this.props;
-        console.log(this.props.videos[0].video_url);
+        const { videos, genres, history, addToList, deleteFromList} = this.props;
         return (
             <div className='videoIndex'>
                 <div className='mainVideoDisplay'>
+                    <i className="fas fa-volume-mute fa-3x" onClick={this.toggleMute}></i>
                     <video poster={videos[0].photo_url} onMouseOver={this.playMainVideo} id='vids' muted><source src={videos[0].video_url} type="video/mp4" autoPlay/></video>       
                     <div className='carouselRow'>
                         {
                             videos.slice(0,9).map(video => (
-                                <VideoIndexItem key={video.id} video={video} history={history} />
+                                <VideoIndexItem key={video.id} video={video} history={history} addToList={addToList} deleteFromList={deleteFromList} />
                             ))
                         }
                     </div>

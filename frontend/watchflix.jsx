@@ -7,7 +7,6 @@ import Root from './components/root'
 
 document.addEventListener("DOMContentLoaded", ()=>{
     const root = document.getElementById("root");
-    console.log(root)
     let store;
     if (window.currentUser) {
         const preloadedState = {

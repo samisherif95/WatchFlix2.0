@@ -1,5 +1,6 @@
 class Api::MylistsController < ApplicationController
      def show
+        @list = Mylist.find(params[:id])
         render :show
     end
 
@@ -9,6 +10,7 @@ class Api::MylistsController < ApplicationController
 
     def create
         @mylist = Mylist.new(mylist_params)
+        # @mylist.user_id = current_user.id 
         if @mylist.save
             render json: {video_id: @mylist[:video_id]}
         else
@@ -28,6 +30,7 @@ class Api::MylistsController < ApplicationController
 
     private
     def mylist_params
-        params.require(:mylist).permit(:user_id, :video_id)
+        params.require(:mylist).permit(:user_id,:video_id)
     end
 end
+

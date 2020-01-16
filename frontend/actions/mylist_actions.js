@@ -1,7 +1,7 @@
 import * as MylistAPI from '../util/mylist_api_util';
 
 export const FETCH_MY_LISTS = "FETCH_MY_LISTS";
-export const CREATE_MYLIST = "CREATE_MYLIST";
+export const ADD_TO_MYLIST = "ADD_TO_MYLIST";
 export const DELETE_FROM_MYLIST = "DELETE_FROM_MYLIST";
 
 const fetchMylist = (videos) =>({
@@ -9,8 +9,8 @@ const fetchMylist = (videos) =>({
     videos
 })
 
-const createMylist = (videoId) => ({
-    type: FETCH_MY_LISTS,
+const addToMylist = (videoId) => ({
+    type: ADD_TO_MYLIST,
     videoId
 })
 
@@ -24,7 +24,7 @@ export const requestLists = () => dispatch => (
 )
 
 export const addToList = (videoId) => dispatch => (
-    MylistAPI.createList(videoId).then(videoId => dispatch(createMylist(videoId)))
+    MylistAPI.addList(videoId).then(videoId => dispatch(addToMylist(videoId)))
 )
 
 export const deleteFromList = (videoId) => dispatch => (
