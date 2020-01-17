@@ -7,10 +7,11 @@ export default (oldstate = {}, action) => {
         case FETCH_MY_LISTS:
             return action.videos;
         case ADD_TO_MYLIST:
-            return Object.assign({}, oldstate, { [action.videoId.id]: action.videoId });
+            return Object.assign({}, oldstate, { [action.videoId.video_id]: action.videoId });
         case DELETE_FROM_MYLIST:
-            let newstate = merge({}, oldstate);
-            delete newstate[action.videoId];
+            // debugger
+            let newstate = Object.assign({}, oldstate);
+            delete newstate[action.videoId.video_id];
             return newstate;
         default:
             return oldstate;

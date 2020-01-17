@@ -1,6 +1,6 @@
 class Api::MylistsController < ApplicationController
      def show
-        @list = Mylist.find(params[:id])
+        @mylist = current_user.lists.find_by(video_id: params[:id])
         render :show
     end
 
@@ -10,15 +10,15 @@ class Api::MylistsController < ApplicationController
 
     def create
         @mylist = Mylist.new(mylist_params)
-        # @mylist.user_id = current_user.id 
+        @mylist.user_id = current_user.id 
         if @mylist.save
-            render json: {video_id: @mylist[:video_id]}
+            render json: @mylist
         else
             render json: {message: "Failed to add this to My List"}, status: 422
         end
     end
 
-    def delete
+    def destroy
         @mylist = current_user.lists.find_by(video_id: params[:id])
         if @mylist
             @mylist.destroy

@@ -28,5 +28,5 @@ export const addToList = (videoId) => dispatch => (
 )
 
 export const deleteFromList = (videoId) => dispatch => (
-    MylistAPI.getMyLists(videoId).then(videoId => dispatch(deleteFromMylist(videoId)))
+    MylistAPI.deleteFromList(videoId).then(videoId => dispatch(deleteFromMylist(videoId)))
 )

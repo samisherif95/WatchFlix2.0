@@ -4,21 +4,33 @@ class VideoIndexItem extends React.Component{
     constructor(props){
         super(props)
         this.state ={
-            mylist: []
+            checked: false
         }
         this.onHoverPlay = this.onHoverPlay.bind(this);
         this.onLeaveStop = this.onLeaveStop.bind(this);
         this.onToggle = this.onToggle.bind(this);
-        // this.addMovietoList = this.addMovietoList.bind(this)
-
-
+        this.addMovietoList = this.addMovietoList.bind(this)
     }
 
-    // addMovietoList(e) {
-    //     console.log(e.currentTarget)
-    //     let vid = e.currentTarget
-    //     this.props.addToList(vid)
-    // }
+    componentDidMount(){
+        // this.setState({
+        //     checked: this.props.mylist[this.props.video.id] ? true : false
+        // })
+    }
+
+    addMovietoList(id) {
+        this.props.addToList(id)
+        this.setState({
+            checked: true
+        })
+    }
+
+    removeFromList(id){
+        this.props.deleteFromList(id)
+        this.setState({
+            checked: false
+        })
+    }
 
     toggleHidden(e) {
         e.currentTarget.classList.remove('hidden')
@@ -46,9 +58,18 @@ class VideoIndexItem extends React.Component{
 
     render(){
         const {video,history} = this.props;
+
+        const toggleList = this.state.checked ? (
+            <i className= "fas fa-check-circle fa-2x" value = {video.id} onClick = {() => this.removeFromList(video.id)}></i >
+            
+            ):(
+                <i className = "fas fa-plus-circle fa-2x" value = {video.id} onClick = {() => this.addMovietoList(video.id)}></i >
+        )
+                
         return(
             <div className='carousel hidden' onMouseLeave={this.onLeaveStop} onMouseOver={this.onToggle} >
-                <i className="fas fa-plus-circle fa-2x" value={video.id} onClick={this.addMovietoList}></i>
+                {/* <i className="fas fa-plus-circle fa-2x" value={video.id} onClick={() => this.addMovietoList(video.id)}></i> */}
+                {toggleList}
                 <strong className='MovieName'>{video.title}</strong>
                 <video poster={video.photo_url} onClick={() => history.push(`/browse/${video.id}`)} >
                     <source src={video.video_url} type="video/mp4" />

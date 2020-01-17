@@ -6,18 +6,18 @@ export const getMyLists =() => (
     })
 )
 
-export const addList = (videoId) => (
+export const addList = (video_id) => (
     $.ajax({
         url: '/api/mylists',
-        method: 'post',
-        data: {videoId}
+        method: 'POST',
+        data: {mylist: {video_id}}
     })
 )
 
-export const deleteFromList = (videoId) => (
+export const deleteFromList = (video_id) => (
     $.ajax({
-        url: `/api/mylists/${videoId}`,
-        method: 'post',
-        data: { videoId }
+        url: `/api/mylists/${video_id}`,
+        method: 'DELETE',
+        data: {mylist: { video_id } }
     })
 )

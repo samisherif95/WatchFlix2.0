@@ -12,14 +12,7 @@ class HomePage extends React.Component{
 
     render(){
         if (this.props.currentUser) {
-            return (
-                 
-            // this disappears if logged in and shows the movies and shows
-            //all of this will be deleted and will be replaced with a component
-            //that will render the videos and shows
-            // <VideoIndex />
-            null
-            ); 
+            return ( null ); 
         } else {
             return (
                 <div className='homePage'>

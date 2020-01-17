@@ -59,7 +59,7 @@ class MoviePage extends React.Component {
         }
 
 
-        const { videos, history } = this.props;
+        const { videos, history, addToList, deleteFromList, mylist } = this.props;
         let MovieVids = videos.filter(video => (
             video.video_type === 'Movie'
         ))
@@ -72,17 +72,17 @@ class MoviePage extends React.Component {
                     <div className='carouselRow'>
                         {
                             MovieVids.slice(0, 5).map(video => (
-                                <VideoIndexItem key={video.id} video={video} history={history} />
+                                <VideoIndexItem key={video.id} video={video} history={history} addToList={addToList} deleteFromList={deleteFromList} mylist={mylist}/>
                             ))
                         }
                     </div>
                 </div>
-
+                
                 <div className='restOfVidIndex'>
                     <div className='carouselRow'>
                         {
                             MovieVids.slice(5,10).map(video => (
-                                <VideoIndexItem key={video.id} video={video} history={history} />
+                                <VideoIndexItem key={video.id} video={video} history={history} addToList={addToList} deleteFromList={deleteFromList} mylist={mylist}/>
                             ))
                         }
                     </div>
@@ -90,7 +90,7 @@ class MoviePage extends React.Component {
                     <div className='carouselRow'>
                         {
                             MovieVids.slice(10, 15).map(video => (
-                                <VideoIndexItem key={video.id} video={video} history={history} />
+                                <VideoIndexItem key={video.id} video={video} history={history} addToList={addToList} deleteFromList={deleteFromList} mylist={mylist}/>
                             ))
                         }
                     </div>
@@ -98,7 +98,7 @@ class MoviePage extends React.Component {
                     <div className='carouselRow'>
                         {
                             MovieVids.slice(15, 20).map(video => (
-                                <VideoIndexItem key={video.id} video={video} history={history} />
+                                <VideoIndexItem key={video.id} video={video} history={history} addToList={addToList} deleteFromList={deleteFromList} mylist={mylist}/>
                             ))
                         }
                     </div>
@@ -106,7 +106,7 @@ class MoviePage extends React.Component {
                     <div className='carouselRow'>
                         {
                             MovieVids.slice(20).map(video => (
-                                <VideoIndexItem key={video.id} video={video} history={history} />
+                                <VideoIndexItem key={video.id} video={video} history={history} addToList={addToList} deleteFromList={deleteFromList} mylist={mylist}/>
                             ))
                         }
                     </div>

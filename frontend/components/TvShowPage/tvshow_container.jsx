@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { requestVideos } from '../../actions/videos_actions';
 import { requestGenres } from '../../actions/genre_actions';
-import { requestLists } from '../../actions/mylist_actions';
+import { requestLists, addToList, deleteFromList } from '../../actions/mylist_actions';
 import TvShowPage from './tvshow';
 import { withRouter } from 'react-router-dom'
 
