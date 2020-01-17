@@ -5,7 +5,8 @@ class MoviePage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            mainVideo: 0
+            mainVideo: 0,
+            muted: true
         }
         this.playMainVideo = this.playMainVideo.bind(this)
         this.toggleMute = this.toggleMute.bind(this);
@@ -32,10 +33,16 @@ class MoviePage extends React.Component {
         let vid = document.getElementById('vids')
         if (vid.muted === false) {
             vid.muted = true;
-            console.log('mute on')
+            // return('mute on')
+            this.setState({
+                muted: true
+            })
         } else {
             vid.muted = false;
-            console.log('mute off')
+            // return ('mute off')
+            this.setState({
+                muted: false
+            })
         }
     }
 
@@ -64,10 +71,16 @@ class MoviePage extends React.Component {
             video.video_type === 'Movie'
         ))
 
+        const muteToggle = this.state.muted ? (
+            <i className="fas fa-volume-mute fa-3x" onClick={this.toggleMute}></i>
+            ) : (
+                <i className="fas fa-volume-up fa-3x" onClick={this.toggleMute}></i>
+        )
+
         return (
             <div className='videoIndex'>
                 <div className='mainVideoDisplay'>
-                    <i className="fas fa-volume-mute fa-3x" onClick={this.toggleMute}></i>
+                    {muteToggle}
                     <video poster={MovieVids[19].photo_url} onMouseOver={this.playMainVideo} id='vids' muted><source src={MovieVids[19].video_url} type="video/mp4" /></video>
                     <div className='carouselRow'>
                         {

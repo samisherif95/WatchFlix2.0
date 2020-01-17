@@ -75,7 +75,6 @@ class VideoIndex extends React.Component{
             ) : (
             <i className="fas fa-volume-up fa-3x" onClick={this.toggleMute}></i>
         )
-        // debugger
         const { videos, genres, history, addToList, deleteFromList ,mylist} = this.props;
         return (
             <div className='videoIndex'>

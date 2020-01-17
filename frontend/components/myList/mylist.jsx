@@ -7,6 +7,7 @@ class MyListPage extends React.Component {
         this.playMainVideo = this.playMainVideo.bind(this)
         this.state = {
             mainVideo: 0,
+            muted: true
         }
         this.toggleMute = this.toggleMute.bind(this)
     }
@@ -57,10 +58,16 @@ class MyListPage extends React.Component {
         let vid = document.getElementById('vids')
         if (vid.muted === false) {
             vid.muted = true;
-            console.log('mute on')
+            // return('mute on')
+            this.setState({
+                muted: true
+            })
         } else {
             vid.muted = false;
-            console.log('mute off')
+            // return ('mute off')
+            this.setState({
+                muted: false
+            })
         }
     }
 
@@ -73,11 +80,17 @@ class MyListPage extends React.Component {
 
         const {history, mylist, deleteFromList, addToList} = this.props;
         
+        const muteToggle = this.state.muted ? (
+            <i className="fas fa-volume-mute fa-3x" onClick={this.toggleMute}></i>
+            ) : (
+             <i className="fas fa-volume-up fa-3x" onClick={this.toggleMute}></i>
+        )
+
         if (this.getvideosfromList().length !== 0){
             return (
                 <div className='videoIndex'>
                     <div className='mainVideoDisplay'>
-                        <i className="fas fa-volume-mute fa-3x" onClick={this.toggleMute}></i>
+                        {muteToggle}
                         <video poster={this.getvideosfromList()[0].photo_url} onMouseOver={this.playMainVideo} id='vids' muted><source src={this.getvideosfromList()[0].video_url} type="video/mp4" /></video>
                         <div className='carouselRow'>
                             {

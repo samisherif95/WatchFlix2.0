@@ -9,7 +9,6 @@ export default (oldstate = {}, action) => {
         case ADD_TO_MYLIST:
             return Object.assign({}, oldstate, { [action.videoId.video_id]: action.videoId });
         case DELETE_FROM_MYLIST:
-            // debugger
             let newstate = Object.assign({}, oldstate);
             delete newstate[action.videoId.video_id];
             return newstate;
