@@ -48,6 +48,14 @@ class VideoIndexItem extends React.Component{
         this.onHoverPlay(e);
     }
 
+    // checkMylist(id){
+    //     this.props.mylist.forEach(video =>{
+    //         if(video.id === id){
+    //             return (<i className="fas fa-check-circle fa-2x" value={video.id} onClick={() => this.removeFromList(video.id)}></i >)
+    //         }
+    //     })
+    // }   
+
     onLeaveStop(e) {
         e.currentTarget.classList.add('hidden')
         let video = e.currentTarget.children[2];

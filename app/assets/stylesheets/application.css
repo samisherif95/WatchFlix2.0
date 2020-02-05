@@ -225,6 +225,7 @@ p{
    color: #737373;
    position: absolute;
    top: 700px;
+   font-family: Arial, Helvetica, sans-serif;
    text-decoration: none;
 }
 
@@ -373,7 +374,7 @@ p{
    display: flex;
    flex-direction: column;
    padding-top:68px;
-   background:blue;
+   background:black;
 }
 
 .mainVideoDisplay{
@@ -428,7 +429,7 @@ p{
 
 .carousel{
    position: relative;
-   background: yellow;
+   background: black;
    display: inline-block;
    height: 65%;
    transform: translateY(60px);

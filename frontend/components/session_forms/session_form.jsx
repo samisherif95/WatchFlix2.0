@@ -55,14 +55,19 @@ class SessionForm extends React.Component {
         const addOns2 = (title === 'Sign In') ? (
             <Link to='/'>Sign up now</Link>
         ) : ( null )
-    
+
+        const demoTernary = title === 'Sign In' ? <button className='login btn-sml' onClick={this.handleDemoLogin}>Demo</button> : null
+        const alreadyMember1 = title === 'Sign Up' ? <span>Already a member? </span> : null
+        const alreadyMember2 = title === 'Sign Up' ? <Link to='/login'>Sign In</Link> : null
+        
+
         return (
             <div className ='head'>
                 <img src={window.background} alt="back_image" className='watchFlixBackground' />
 
                 <div className="header">
                     <img src={window.logo} alt="logo" className='watchFlixlogo' />
-                    <button className='login btn-sml' onClick={this.handleDemoLogin}>Demo</button> 
+                    {demoTernary} 
                     {/* change to in above when implemnting demo function */}
                 </div>
 
@@ -91,6 +96,8 @@ class SessionForm extends React.Component {
                             <div className='addOns'>
                                 {addOns1}
                                 {addOns2}
+                                {alreadyMember1}
+                                {alreadyMember2}
                             </div>
 
                         </form>

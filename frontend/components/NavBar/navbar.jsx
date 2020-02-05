@@ -34,8 +34,9 @@ class NavBar extends React.Component{
                 <ul className='navbar-rightSide'>
 
                     <li className='navbar-icons'><i className="fas fa-search fa-lg"></i></li>
-                    <li className='navbar-icons'><a href="https://github.com/samisherif95"><i className="fab fa-github fa-lg"></i></a></li>
-                    <li className='navbar-icons'><a href="https://www.linkedin.com/in/sami-ellaboudy-667883161/"><i className="fab fa-linkedin fa-lg"></i></a></li>
+                    <li className='navbar-icons'><a href="https://github.com/samisherif95" target="_blank" ><i className="fab fa-github fa-lg"></i></a></li>
+                    <li className='navbar-icons'><a href="https://www.linkedin.com/in/sami-ellaboudy-667883161/" target="_blank"><i className="fab fa-linkedin fa-lg"></i></a></li>
+                    <li className='navbar-icons'><a href="https://angel.co/sami-ellaboudy" target="_blank"><i className="fab fa-angellist fa-lg"></i></a></li>
                     <li className='navbar-icons'><i className="fas fa-user fa-lg" onClick={this.toggledropdownClick}></i>
                         <ul className='dropdown-toggle hidden'>
                             <li> Welcome,</li>
