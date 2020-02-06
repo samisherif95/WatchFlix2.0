@@ -48,14 +48,6 @@ class VideoIndexItem extends React.Component{
         this.onHoverPlay(e);
     }
 
-    // checkMylist(id){
-    //     this.props.mylist.forEach(video =>{
-    //         if(video.id === id){
-    //             return (<i className="fas fa-check-circle fa-2x" value={video.id} onClick={() => this.removeFromList(video.id)}></i >)
-    //         }
-    //     })
-    // }   
-
     onLeaveStop(e) {
         e.currentTarget.classList.add('hidden')
         let video = e.currentTarget.children[2];
@@ -65,9 +57,15 @@ class VideoIndexItem extends React.Component{
     }
 
     render(){
-        const {video,history} = this.props;
 
-        const toggleList = this.state.checked ? (
+        
+        const {video,history} = this.props;
+        let result= []
+        Object.keys(this.props.mylist).forEach( key => {
+            result.push(this.props.mylist[key].video_id);
+        })
+        // debugger
+        const toggleList = result.includes(this.props.video.id) ? (
             <i className= "fas fa-check-circle fa-2x" value = {video.id} onClick = {() => this.removeFromList(video.id)}></i >
             
             ):(
@@ -76,7 +74,6 @@ class VideoIndexItem extends React.Component{
                 
         return(
             <div className='carousel hidden' onMouseLeave={this.onLeaveStop} onMouseOver={this.onToggle} >
-                {/* <i className="fas fa-plus-circle fa-2x" value={video.id} onClick={() => this.addMovietoList(video.id)}></i> */}
                 {toggleList}
                 <strong className='MovieName'>{video.title}</strong>
                 <video poster={video.photo_url} onClick={() => history.push(`/browse/${video.id}`)} >

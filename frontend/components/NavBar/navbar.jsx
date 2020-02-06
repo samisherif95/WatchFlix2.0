@@ -5,11 +5,18 @@ class NavBar extends React.Component{
     constructor(props){
         super(props)
         this.toggledropdownClick = this.toggledropdownClick.bind(this)
+        this.toggleSearchClick = this.toggleSearchClick.bind(this)
     }
     
     toggledropdownClick(){
         $(function (){
             $('.dropdown-toggle').toggleClass('hidden')
+        })
+    }
+
+    toggleSearchClick() {
+        $(function () {
+            $('.searchbar').toggleClass('hidden')
         })
     }
 
@@ -33,7 +40,9 @@ class NavBar extends React.Component{
 
                 <ul className='navbar-rightSide'>
 
-                    <li className='navbar-icons'><i className="fas fa-search fa-lg"></i></li>
+                    <li className='navbar-icons'><i className="fas fa-search fa-lg" onClick={this.toggleSearchClick}></i>
+                        <input className='searchbar hidden' type="text"/>
+                    </li>
                     <li className='navbar-icons'><a href="https://github.com/samisherif95" target="_blank" ><i className="fab fa-github fa-lg"></i></a></li>
                     <li className='navbar-icons'><a href="https://www.linkedin.com/in/sami-ellaboudy-667883161/" target="_blank"><i className="fab fa-linkedin fa-lg"></i></a></li>
                     <li className='navbar-icons'><a href="https://angel.co/sami-ellaboudy" target="_blank"><i className="fab fa-angellist fa-lg"></i></a></li>
@@ -41,7 +50,7 @@ class NavBar extends React.Component{
                         <ul className='dropdown-toggle hidden'>
                             <li> Welcome,</li>
                             <li>{this.props.currentUser.email}</li>
-                            <li onClick={this.props.logout}>Sign Out</li>
+                            <li onClick={this.props.logout} id='signOut'>Sign Out</li>
                         </ul>
                     </li>
 

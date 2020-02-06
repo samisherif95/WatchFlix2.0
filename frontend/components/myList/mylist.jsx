@@ -19,14 +19,6 @@ class MyListPage extends React.Component {
     }
 
     getvideosfromList() {
-        // let videos = this.props.videos;
-        // let result = [];
-        // for (let i = 0; i < videos.length; i++) {
-        //     if (videos[i].genre_ids.includes(id)) {
-        //         result.push(videos[i])
-        //     }
-        // }
-        // return result;
         let videos = this.props.videos;
         let mylist = this.props.mylist;
         let result = [];
@@ -58,13 +50,11 @@ class MyListPage extends React.Component {
         let vid = document.getElementById('vids')
         if (vid.muted === false) {
             vid.muted = true;
-            // return('mute on')
             this.setState({
                 muted: true
             })
         } else {
             vid.muted = false;
-            // return ('mute off')
             this.setState({
                 muted: false
             })
@@ -85,7 +75,7 @@ class MyListPage extends React.Component {
             ) : (
              <i className="fas fa-volume-up fa-3x" onClick={this.toggleMute}></i>
         )
-
+ 
         if (this.getvideosfromList().length !== 0){
             return (
                 <div className='videoIndex'>
@@ -100,24 +90,13 @@ class MyListPage extends React.Component {
                             }
                         </div>
                     </div>
-
-                    {/* <div className='restOfVidIndex'>
-                    <div className='carouselRow'>
-                        {
-                            mylistVids.slice(5).map(video => (
-                                <VideoIndexItem key={video.id} video={video} history={history} deleteFromList={deleteFromList} mylist={mylist} />
-                            ))
-                        }
-
-                    </div>
-                </div> */}
-
                 </div>
             );
 
         }else{
             return(
                 <div className='EmptyList'>
+                    <h1>You have no videos in your list</h1>
                 </div>
             )
         }
