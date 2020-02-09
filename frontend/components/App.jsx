@@ -18,11 +18,11 @@ const App = () => (
         <ProtectedRoute exact path='/browse/TvShows' component={TvShowContainer}/>
         <ProtectedRoute exact path='/browse/Movies' component={MovieContainer}/>
         <ProtectedRoute exact path='/browse/my-list' component={MylistContainer} />
-        <ProtectedRoute path='/' component= {NavBarContainer} />
-        <ProtectedRoute exact path='/browse/:videoId' component={VideoPlayerContainer}/>
+        <ProtectedRoute path='/browse' component= {NavBarContainer} />
         <Route exact path='/browse' component={VideoIndexContainer}/>
         <AuthRoute exact path="/signup" component={SignUpFormContainer} />
         <AuthRoute exact path="/login" component={LoginFormContainer} />
+        <ProtectedRoute exact path='/browse/:videoId' component={VideoPlayerContainer}/>
     </>
 );
 

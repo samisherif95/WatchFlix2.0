@@ -14,7 +14,7 @@ class VideoPlayer extends React.Component{
             <div className='fullScreenPlayer'>
                 {
                     this.props.video ? <div className='watchVideoParent'><video controls autoPlay className="watchVideo"> <source src={this.props.video.video_url} type="video/mp4" /> </video> </div> : 
-                    <p>no video</p>
+                    null
                 }
             </div>
         );
