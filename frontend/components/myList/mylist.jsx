@@ -95,8 +95,10 @@ class MyListPage extends React.Component {
 
         }else{
             return(
-                <div className='EmptyList'>
-                    <h1>You have no videos in your list</h1>
+                <div className='EmptyPage'>
+                    <div className='EmptyList'>
+                        <h1>You have no videos in your list</h1>
+                    </div>
                 </div>
             )
         }

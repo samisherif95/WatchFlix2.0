@@ -28,7 +28,7 @@
 #root {
    height: 100vh; 
    overflow-x: hidden; 
-   background: #141414;
+   /* background: #141414; */
 }
 
  .homePage{
@@ -391,6 +391,12 @@ p{
    flex-direction: column;
    padding-top:68px;
    background:black;
+}
+
+.EmptyPage{
+   height: 100%;
+   padding-top: 68px;
+   background: black;
 }
 
 .mainVideoDisplay{
