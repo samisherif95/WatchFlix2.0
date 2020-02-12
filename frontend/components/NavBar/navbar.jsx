@@ -4,8 +4,13 @@ import {Link} from 'react-router-dom'
 class NavBar extends React.Component{
     constructor(props){
         super(props)
+        this.state={
+            search: ''
+        }
         this.toggledropdownClick = this.toggledropdownClick.bind(this)
         this.toggleSearchClick = this.toggleSearchClick.bind(this)
+        this.handleUpdate = this.handleUpdate.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
     
     toggledropdownClick(){
@@ -19,6 +24,24 @@ class NavBar extends React.Component{
             $('.searchbar').toggleClass('hidden')
         })
     }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        setTimeout((() => {
+            if (this.state.query === "") {
+                this.props.history.push("/browse");
+            } else {
+                this.props.history.push(`/search/${this.state.search}`);
+            }
+        }), 300);
+    }
+
+    handleUpdate(e) {
+        this.setState({
+            search: e.currentTarget.value
+        });
+    }
+
 
 
     componentDidMount(){
@@ -41,7 +64,9 @@ class NavBar extends React.Component{
                 <ul className='navbar-rightSide'>
 
                     <li className='navbar-icons'><i className="fas fa-search fa-lg" onClick={this.toggleSearchClick}></i>
-                        <input className='searchbar hidden' type="text"/>
+                        <form onSubmit={this.handleSubmit}>
+                            <input className='searchbar hidden' placeholder='Title' value={this.state.search} onChange={this.handleUpdate} type="text"/>
+                        </form>
                     </li>
                     <li className='navbar-icons'><a href="https://github.com/samisherif95" target="_blank" ><i className="fab fa-github fa-lg"></i></a></li>
                     <li className='navbar-icons'><a href="https://www.linkedin.com/in/sami-ellaboudy-667883161/" target="_blank"><i className="fab fa-linkedin fa-lg"></i></a></li>

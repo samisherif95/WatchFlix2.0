@@ -9,6 +9,7 @@ import MovieContainer from '../components/MoviePage/movie_container'
 import MylistContainer from '../components/myList/mylist_container'
 import { AuthRoute, ProtectedRoute } from '../util/route_util'
 import VideoPlayerContainer from '../components/videoPlayer/videoplayer_container';
+import SearchContainer from '../components/search/search_container'
 import {Route} from 'react-router-dom'
 
 
@@ -18,6 +19,7 @@ const App = () => (
         <ProtectedRoute exact path='/browse/TvShows' component={TvShowContainer}/>
         <ProtectedRoute exact path='/browse/Movies' component={MovieContainer}/>
         <ProtectedRoute exact path='/browse/my-list' component={MylistContainer} />
+        <ProtectedRoute exact path='/search/:searchinput' component={SearchContainer}/>
         <ProtectedRoute path='/' component= {NavBarContainer} />
         <Route exact path='/browse' component={VideoIndexContainer}/>
         <AuthRoute exact path="/signup" component={SignUpFormContainer} />

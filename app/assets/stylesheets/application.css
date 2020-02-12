@@ -377,11 +377,20 @@ p{
     background-color: rgba(0,0,0,0.8);
     border: solid 1.5px white;
     font-size: 15px;
-    padding-left: 40px;
+    padding-left: 15px;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.SearchPageCss{
+   height: 100vh;
+}
+
+.SearchTitle{
+   font-family: Arial, Helvetica, sans-serif;
+   transform: translate(25px,35px);
+   font-size: 32px;
+}
 /* ----------------------------------------------- */
 /* -----------------VideosIndex------------------- */
 /* ----------------------------------------------- */
@@ -428,6 +437,10 @@ p{
 
 .mainVideoDisplay .carouselRow{
    padding-bottom: 50px;
+}
+
+.fa-search{
+   padding-right: 5px;
 }
 
 .restOfVidIndex{
