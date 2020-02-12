@@ -63,11 +63,10 @@ class NavBar extends React.Component{
 
                 <ul className='navbar-rightSide'>
 
-                    <li className='navbar-icons'><i className="fas fa-search fa-lg" onClick={this.toggleSearchClick}></i>
-                        <form onSubmit={this.handleSubmit}>
-                            <input className='searchbar hidden' placeholder='Title' value={this.state.search} onChange={this.handleUpdate} type="text"/>
-                        </form>
-                    </li>
+                    <li className='navbar-icons'><i className="fas fa-search fa-lg" onClick={this.toggleSearchClick}></i></li>
+                    <form onSubmit={this.handleSubmit}>
+                        <input className='searchbar hidden' placeholder='Title' value={this.state.search} onChange={this.handleUpdate} type="text"/>
+                    </form>   
                     <li className='navbar-icons'><a href="https://github.com/samisherif95" target="_blank" ><i className="fab fa-github fa-lg"></i></a></li>
                     <li className='navbar-icons'><a href="https://www.linkedin.com/in/sami-ellaboudy-667883161/" target="_blank"><i className="fab fa-linkedin fa-lg"></i></a></li>
                     <li className='navbar-icons'><a href="https://angel.co/sami-ellaboudy" target="_blank"><i className="fab fa-angellist fa-lg"></i></a></li>

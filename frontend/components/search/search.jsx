@@ -21,23 +21,32 @@ class SearchPage extends React.Component{
         console.log(search)
         // debugger
         let searchVids = videos.filter(video =>(
-            video.title.toLowerCase().includes(search)
+            video.title.toLowerCase().includes(search.toLowerCase())
         ))
-        console.log('hitting here')
-        return(
-            <div className='videoIndex'>
-                <strong className='SearchTitle'>Your Search: {search}</strong>
-                <div className='SearchPageCss'>
-                    <div className='carouselRow'>
-                        {
-                            searchVids.map(video => (
-                                <VideoIndexItem key={video.id} video={video} history={history} addToList={addToList} deleteFromList={deleteFromList} mylist={mylist} />
-                            ))
-                        }
+        if (searchVids.length !==0){
+            return(
+                <div className='videoIndex'>
+                    <strong className='SearchTitle'>Your Search: {search}</strong>
+                    <div className='SearchPageCss'>
+                        <div className='carouselRow'>
+                            {
+                                searchVids.map(video => (
+                                    <VideoIndexItem key={video.id} video={video} history={history} addToList={addToList} deleteFromList={deleteFromList} mylist={mylist} />
+                                ))
+                            }
+                        </div>
                     </div>
                 </div>
-            </div>
-        )
+            )
+        }else {
+            return(
+                <div className='videoIndex'>
+                    <div className='EmptySearchPageCss'>
+                        <p>kill me now</p>
+                    </div>
+                </div>
+            )
+        }
     }
 }
 

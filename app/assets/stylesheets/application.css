@@ -382,6 +382,15 @@ p{
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.EmptySearchPageCss{
+   background-color: black;
+   height: 100vh;
+}
+
+.EmptySearchPageCss p{
+   color: black;
+}
+
 .SearchPageCss{
    height: 100vh;
 }
