@@ -19,7 +19,19 @@ class VideoIndex extends React.Component{
         this.props.requestLists()
     }
 
-    
+    getvideosfromList() {
+        let videos = this.props.videos;
+        let mylist = this.props.mylist;
+        let result = [];
+        for (let i = 0; i < mylist.length; i++) {
+            for (let j = 0; j < videos.length; j++) {
+                if (mylist[i].video_id === videos[j].id && mylist[i].user_id === this.props.currentUser.id) {
+                    result.push(videos[j])
+                }
+            }
+        }
+        return result
+    }
 
     getvideosforGenre(id){
         let videos = this.props.videos;
@@ -69,6 +81,19 @@ class VideoIndex extends React.Component{
         if(this.props.videos.length === 0 || this.props.genres.length===0){
             return null;
         }
+        const ListVideoIndex = this.getvideosfromList().length !== 0 ? (
+            <>
+                <p className='genreName'>MyList</p>
+                <div className='carouselRow'>
+                    {
+                        this.getvideosfromList().map(video => (
+                            <VideoIndexItem key={video.id} video={video} history={history} addToList={addToList} deleteFromList={deleteFromList} mylist={mylist} />
+                        ))
+                    }
+
+                </div>
+            </>
+        ) : <p></p>
 
         const muteToggle = this.state.muted ? (
             <i className="fas fa-volume-mute fa-3x" onClick={this.toggleMute}></i>
@@ -81,7 +106,7 @@ class VideoIndex extends React.Component{
                 <div className='mainVideoDisplay'>
                     {muteToggle}
                     <video poster={videos[0].photo_url} onMouseOver={this.playMainVideo} id='vids' muted><source src={videos[0].video_url} type="video/mp4" autoPlay/></video>       
-                    <div className='carouselRow'>
+                    <div className='carouselRowFirst'>
                         {
                             videos.slice(0,9).map(video => (
                                 <VideoIndexItem key={video.id} video={video} history={history} addToList={addToList} deleteFromList={deleteFromList} mylist={mylist}/>
@@ -91,6 +116,16 @@ class VideoIndex extends React.Component{
                 </div>
 
                 <div className='restOfVidIndex'>
+                    {this.getvideosfromList().length !== 0 && <p className='genreName'>MyList</p> }
+                    {this.getvideosfromList().length !== 0 && <div className='carouselRow'>
+                        {
+                            this.getvideosfromList().map(video => (
+                                <VideoIndexItem key={video.id} video={video} history={history} addToList={addToList} deleteFromList={deleteFromList} mylist={mylist} />
+                            ))
+                        }
+
+                    </div>}
+
                     <p className='genreName'>{genres[0].genre}</p>
                     <div className='carouselRow'>
                         {

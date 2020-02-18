@@ -28,7 +28,7 @@ class SearchPage extends React.Component{
                 <div className='videoIndex'>
                     <strong className='SearchTitle'>Your Search: {search}</strong>
                     <div className='SearchPageCss'>
-                        <div className='carouselRow'>
+                        <div className='carouselRowSearch'>
                             {
                                 searchVids.map(video => (
                                     <VideoIndexItem key={video.id} video={video} history={history} addToList={addToList} deleteFromList={deleteFromList} mylist={mylist} />

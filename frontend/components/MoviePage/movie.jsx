@@ -82,7 +82,7 @@ class MoviePage extends React.Component {
                 <div className='mainVideoDisplay'>
                     {muteToggle}
                     <video poster={MovieVids[19].photo_url} onMouseOver={this.playMainVideo} id='vids' muted><source src={MovieVids[19].video_url} type="video/mp4" /></video>
-                    <div className='carouselRow'>
+                    <div className='carouselRowFirst'>
                         {
                             MovieVids.slice(0, 5).map(video => (
                                 <VideoIndexItem key={video.id} video={video} history={history} addToList={addToList} deleteFromList={deleteFromList} mylist={mylist}/>

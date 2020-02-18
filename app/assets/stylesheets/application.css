@@ -431,7 +431,7 @@ p{
    top: 0%;
    left: 0%;
    width:100%;
-   height: 100%;
+   height: 89.5%;
    object-fit:fill;
 }
 .mainVideoDisplay i{
@@ -454,6 +454,8 @@ p{
 
 .restOfVidIndex{
    background: #141414;
+   transform: translateY(-45px);
+
 }
 
 .carouselRow{
@@ -471,6 +473,37 @@ p{
    margin: 0 auto;
 }
 
+.carouselRowFirst{
+   display: flex;
+   height: 280px;
+   width: 100%;
+   bottom: 0;
+   z-index: 1;
+   scrollbar-width: none;
+   transition: transform 450ms;
+   overflow: -moz-hidden-unscrollable;
+   overflow-x: scroll;
+   overflow-y: hidden;
+   width: 95vw;
+   margin: 0 auto;
+   transform: translateY(-100px);
+}
+
+.carouselRowSearch{
+   display: flex;
+   height: 280px;
+   width: 100%;
+   bottom: 0;
+   z-index: 1;
+   scrollbar-width: none;
+   transition: transform 450ms;
+   overflow: -moz-hidden-unscrollable;
+   overflow-x: scroll;
+   overflow-y: hidden;
+   width: 95vw;
+   margin: 0 auto;
+   transform: translateY(45px);
+}
 .carousel{
    position: relative;
    background: black;
