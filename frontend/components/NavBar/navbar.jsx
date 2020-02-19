@@ -28,7 +28,7 @@ class NavBar extends React.Component{
     handleSubmit(e) {
         e.preventDefault();
         setTimeout((() => {
-            if (this.state.query === "") {
+            if (this.state.search === "") {
                 this.props.history.push("/browse");
             } else {
                 this.props.history.push(`/search/${this.state.search}`);
@@ -64,7 +64,7 @@ class NavBar extends React.Component{
                 <ul className='navbar-rightSide'>
 
                     <li className='navbar-icons'><i className="fas fa-search fa-lg" onClick={this.toggleSearchClick}></i></li>
-                    <form onSubmit={this.handleSubmit}>
+                    <form onChange={this.handleSubmit}>
                         <input className='searchbar hidden' placeholder='Title' value={this.state.search} onChange={this.handleUpdate} type="text" onMouseLeave={this.toggleSearchClick}/>
                     </form>   
                     <li className='navbar-icons'><a href="https://github.com/samisherif95" target="_blank" ><i className="fab fa-github fa-lg"></i></a></li>

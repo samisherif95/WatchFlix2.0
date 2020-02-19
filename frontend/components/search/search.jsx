@@ -23,7 +23,7 @@ class SearchPage extends React.Component{
         let searchVids = videos.filter(video =>(
             video.title.toLowerCase().includes(search.toLowerCase())
         ))
-        if (searchVids.length !==0){
+        if (searchVids.length !==0 && search.length!==0){
             return(
                 <div className='videoIndex'>
                     <strong className='SearchTitle'>Your Search: {search}</strong>
@@ -38,7 +38,8 @@ class SearchPage extends React.Component{
                     </div>
                 </div>
             )
-        }else {
+        }
+        else {
             return(
                 <div className='videoIndex'>
                     <div className='EmptySearchPageCss'>
