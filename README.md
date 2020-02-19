@@ -19,12 +19,16 @@ Features
 6. Videos can be played on a fullscreen video player 
 7. Users can navigate to different links on the navbar which display different categories such as Movies & TV Shows
 
-![code snippet](https://github.com/samisherif95/WatchFlix2.0/blob/master/app/assets/images/screenshotCode.png "WatchFlix logo")
+![code snippet](https://github.com/samisherif95/WatchFlix2.0/blob/master/app/assets/images/screenshotCode.png "WatchFlix code")
 
 Live Website Screen Shots
 ------------
 
-![code snippet](https://github.com/samisherif95/WatchFlix2.0/blob/master/app/assets/images/screenshotCode.png "WatchFlix logo")
+![code snippet](https://github.com/samisherif95/WatchFlix2.0/blob/master/app/assets/images/screenshot2.png "WatchFlix live")
+
+
+![code snippet](https://github.com/samisherif95/WatchFlix2.0/blob/master/app/assets/images/screenshot3.png "WatchFlix live")
+
 
 Future Work 
 ------------
