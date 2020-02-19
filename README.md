@@ -19,7 +19,8 @@ Features
 6. Videos can be played on a fullscreen video player 
 7. Users can navigate to different links on the navbar which display different categories such as Movies & TV Shows
 
-![logo](https://gfycat.com/genuinespotlessbernesemountaindog "WatchFlix logo")
+![code snippet](https://github.com/samisherif95/WatchFlix2.0/blob/master/app/assets/images/logo.png "WatchFlix logo")
+
 
 
 
