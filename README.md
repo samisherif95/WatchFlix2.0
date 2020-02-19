@@ -9,6 +9,11 @@ WatchFlix is a clone of the media-streaming Titan Netflix. WatchFlix allows user
 
 ### Check me out: [WatchFlix](https://watchflix-2.herokuapp.com/#/)
 
+Technologies
+------------
+
+React and Redux on the frontend, Ruby on Rails in the backend, PostgreSQL database and Hosted on Heroku
+
 Features
 ------------
 1. Frontend and Backend User Authentication
