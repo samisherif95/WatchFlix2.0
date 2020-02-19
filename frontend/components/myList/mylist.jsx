@@ -71,9 +71,9 @@ class MyListPage extends React.Component {
         const {history, mylist, deleteFromList, addToList} = this.props;
         
         const muteToggle = this.state.muted ? (
-            <i className="fas fa-volume-mute fa-3x" onClick={this.toggleMute}></i>
+            <div className='volBT' onClick={this.toggleMute}><i className="fas fa-volume-mute fa-3x"></i></div>
             ) : (
-             <i className="fas fa-volume-up fa-3x" onClick={this.toggleMute}></i>
+                <div className='volBT' onClick={this.toggleMute}><i className="fas fa-volume-up fa-3x" ></i></div>
         )
  
         if (this.getvideosfromList().length !== 0){

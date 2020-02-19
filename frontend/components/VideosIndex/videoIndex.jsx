@@ -60,6 +60,7 @@ class VideoIndex extends React.Component{
     }
 
     toggleMute(){
+        console.log('hitting here')
         let vid = document.getElementById('vids')
         if(vid.muted === false){
             vid.muted = true;
@@ -96,9 +97,9 @@ class VideoIndex extends React.Component{
         ) : <p></p>
 
         const muteToggle = this.state.muted ? (
-            <i className="fas fa-volume-mute fa-3x" onClick={this.toggleMute}></i>
+            <div className='volBT' onClick={this.toggleMute}><i className="fas fa-volume-mute fa-3x" ></i></div>
             ) : (
-            <i className="fas fa-volume-up fa-3x" onClick={this.toggleMute}></i>
+            <div className='volBT' onClick={this.toggleMute}><i className="fas fa-volume-up fa-3x" ></i></div>
         )
         const { videos, genres, history, addToList, deleteFromList ,mylist} = this.props;
         return (

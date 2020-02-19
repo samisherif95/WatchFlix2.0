@@ -72,9 +72,9 @@ class MoviePage extends React.Component {
         ))
 
         const muteToggle = this.state.muted ? (
-            <i className="fas fa-volume-mute fa-3x" onClick={this.toggleMute}></i>
+            <div className='volBT' onClick={this.toggleMute}> <i className="fas fa-volume-mute fa-3x" ></i></div>
             ) : (
-                <i className="fas fa-volume-up fa-3x" onClick={this.toggleMute}></i>
+                <div className='volBT' onClick={this.toggleMute}><i className="fas fa-volume-up fa-3x" ></i></div>
         )
 
         return (

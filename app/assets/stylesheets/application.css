@@ -434,12 +434,12 @@ p{
    height: 89.5%;
    object-fit:fill;
 }
-.mainVideoDisplay i{
+.volBT{
    z-index: 1;
    font-weight: bolder;
    position: absolute;
    right: 60px;
-   bottom: 335px;
+   bottom: 380px;
    color: white;
    text-shadow: 0.5px 0.5px black;
 }
