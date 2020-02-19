@@ -21,8 +21,10 @@ Features
 
 ![code snippet](https://github.com/samisherif95/WatchFlix2.0/blob/master/app/assets/images/screenshotCode.png "WatchFlix logo")
 
+Live Website Screen Shots
+------------
 
-
+![code snippet](https://github.com/samisherif95/WatchFlix2.0/blob/master/app/assets/images/screenshotCode.png "WatchFlix logo")
 
 Future Work 
 ------------
