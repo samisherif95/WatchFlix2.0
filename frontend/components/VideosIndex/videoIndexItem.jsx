@@ -4,9 +4,11 @@ class VideoIndexItem extends React.Component{
     constructor(props){
         super(props)
         this.state ={
-            checked: false
+            checked: false,
+            mute: false
         }
         this.onHoverPlay = this.onHoverPlay.bind(this);
+        this.showDropDown = this.showDropDown.bind(this);
         this.onLeaveStop = this.onLeaveStop.bind(this);
         this.onToggle = this.onToggle.bind(this);
         this.addMovietoList = this.addMovietoList.bind(this)
@@ -37,15 +39,21 @@ class VideoIndexItem extends React.Component{
     }
 
     onHoverPlay(e) {
+        // console.log(e.currentTarget)
         let video = e.currentTarget.children[2];
         e.persist();
         video.play().then(null, () => {
             video.play();
         });
     }
+
     onToggle(e){
         this.toggleHidden(e);
         this.onHoverPlay(e);
+    }
+
+    showDropDown(){
+        console.log('show Info')
     }
 
     onLeaveStop(e) {
@@ -66,12 +74,12 @@ class VideoIndexItem extends React.Component{
         })
         // debugger
         const toggleList = result.includes(this.props.video.id) ? (
-            <i className= "fas fa-check-circle fa-2x" value = {video.id} onClick = {() => this.removeFromList(video.id)}></i >
+            <i className= "fas fa-check-circle fa-lg addToList" value = {video.id} onClick = {() => this.removeFromList(video.id)}></i >
             
             ):(
-                <i className = "fas fa-plus-circle fa-2x" value = {video.id} onClick = {() => this.addMovietoList(video.id)}></i >
+                <i className= "fas fa-plus-circle fa-lg addToList" value = {video.id} onClick = {() => this.addMovietoList(video.id)}></i >
         )
-                
+
         return(
             <div className='carousel hidden' onMouseLeave={this.onLeaveStop} onMouseOver={this.onToggle} >
                 {toggleList}
@@ -79,6 +87,9 @@ class VideoIndexItem extends React.Component{
                 <video poster={video.photo_url} onClick={() => history.push(`/browse/${video.id}`)} >
                     <source src={video.video_url} type="video/mp4" />
                 </video>
+                <div className='dropDownInfo' onClick={this.showDropDown}>
+                    <i className="fas fa-caret-down fa-lg"></i>
+                </div>
             </div>
         );
     }
