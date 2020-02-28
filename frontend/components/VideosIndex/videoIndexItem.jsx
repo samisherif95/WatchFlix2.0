@@ -64,9 +64,8 @@ class VideoIndexItem extends React.Component{
         video.load();
     }
 
+    //rendering each item in the carousel
     render(){
-
-        
         const {video,history} = this.props;
         let result= []
         Object.keys(this.props.mylist).forEach( key => {

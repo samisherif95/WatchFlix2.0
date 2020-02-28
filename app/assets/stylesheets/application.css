@@ -556,8 +556,7 @@ p{
 }
 
 .fa-caret-down{
-   margin: 0 auto;
-   transform: translate(100px,5px);
+   transform: translate(755%,50%);
 }
 
 .carousel:hover {
